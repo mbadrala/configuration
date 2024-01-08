@@ -1,7 +1,4 @@
 function ColorMyPencils(color)
-   --  color = color or "blue"
-   --  vim.cmd.colorscheme(color)
-
     vim.api.nvim_set_hl(0, "Statement",    { fg = "#17160B" })
     vim.api.nvim_set_hl(0, "Identifier",   { fg = "#17160B" })
     vim.api.nvim_set_hl(0, "Special",      { fg = "#17160B" })
@@ -28,6 +25,7 @@ function ColorMyPencils(color)
     vim.api.nvim_set_hl(0, "Directory",    { fg = "#817A60" })
     vim.api.nvim_set_hl(0, "EndOfBuffer",  { })
     vim.api.nvim_set_hl(0, "ModeMsg",      { bg = "#EE502B" })
+    vim.api.nvim_set_hl(0, "MatchParen",      { bg = "#EE502B" })
     vim.api.nvim_set_hl(0, "MoreMsg",      { fg = "#EE502B" })
     vim.api.nvim_set_hl(0, "SpecialKey",   { fg = "#EE502B" })
     vim.api.nvim_set_hl(0, "Question",     { fg = "#EE502B" })
