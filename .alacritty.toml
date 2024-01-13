@@ -20,11 +20,11 @@ green   = "#267B53"
 magenta = "#B22B7C"
 red     = "#EE502B"
 white   = "#c1c0d4"
-yellow  = "#deb176"
+yellow  = "#fad220"
 
 [colors.primary]
-background = "#D4CFC7"
-foreground = "#17160B"
+foreground = "#D4CFC7"
+background = "#17160B"
 
 [cursor]
 blink_interval = 500
@@ -54,10 +54,9 @@ family = "JetBrains Mono"
 style = "Regular"
 
 [window]
-decorations = "buttonless"
+decorations = "None"
 dynamic_padding = false
 opacity = 1.0
-option_as_alt = "Both"
 startup_mode = "Windowed"
 
 [window.padding]
