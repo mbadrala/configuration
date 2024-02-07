@@ -1,30 +1,5 @@
-[colors.bright]
-black   = "#353539"
-blue    = "#b9aeda"
-cyan    = "#f591b2"
-green   = "#9dc6ac"
-magenta = "#ecaad6"
-red     = "#ffae9f"
-white   = "#cac9dd"
-yellow  = "#f0c5a9"
-
-[colors.cursor]
-cursor = "#EE502B"
-text   = "#D4CFC7"
-
-[colors.normal]
-black   = "#27272a"
-blue    = "#3D31D7"
-cyan    = "#ea83a5"
-green   = "#267B53"
-magenta = "#B22B7C"
-red     = "#EE502B"
-white   = "#c1c0d4"
-yellow  = "#fad220"
-
-[colors.primary]
-foreground = "#D4CFC7"
-background = "#17160B"
+[env]
+TERM = "xterm-256color"
 
 [cursor]
 blink_interval = 500
@@ -34,31 +9,12 @@ blink_timeout = 0
 blinking = "Always"
 shape = "Block"
 
-[env]
-TERM = "xterm-256color"
-
-[font]
-size = 12
-
-[font.bold]
-style = "Bold"
-
-[font.bold_italic]
-style = "Bold Italic"
-
-[font.italic]
-style = "Italic"
-
-[font.normal]
-family = "JetBrains Mono"
-style = "Regular"
-
 [window]
 decorations = "None"
 dynamic_padding = false
-opacity = 1.0
+opacity = 0.8
 startup_mode = "Windowed"
 
 [window.padding]
-x = 12
-y = 12
+x = 8
+y = 10
