@@ -1,22 +1,95 @@
-local primaryWhite   = "#fefefe"
-local primaryBlack   = "#17160B"
-local secondaryBlack = "#212012"
-local primaryGreen   = "#a6d62d"
-local primaryFg      = "#e2e2e2"
-local primaryYellow  = "#fad220"
-local primaryBlue    = "#2e62b3"
-local lightBlue      = "#84B2FF"
-local primaryMagenta = "#EE502B"
-local gray           = "#CEC5B9"
-local offGray        = "#817A60"
+function Pico8Colors()
+    local primaryBlack    = "#000000"
+    local secondaryBlack  = "#1D2B53"
+    local primaryGreen    = "#00E436"
+    local secondaryGreen  = "#008751"
+    local primaryFg       = "#FFF1E8"
+    local primaryYellow   = "#FFEC27"
+    local primaryBlue     = "#29ADFF"
+    local primaryMagenta  = "#7E2553"
+    local primaryOrange   = "#FFA300"
+    local gray            = "#C2C3C7"
+    local offGray         = "#83769C"
+    local primaryBrown    = "#AB5236"
+    local offBrown        = "#5F574F"
+    local lightBrown      = "#FFCCAA"
+    local pink            = "#FF77A8"
+    local primaryRed      = "#FF004D"
+    ---------------PICO8------------------
+    vim.api.nvim_set_hl(0, "Identifier",               { fg = primaryBlue })
+    vim.api.nvim_set_hl(0, "Function",                 { fg = primaryRed })
+    vim.api.nvim_set_hl(0, "NonText",                  { fg = primaryFg })
+    vim.api.nvim_set_hl(0, "VertSplit",                { fg = secondaryBlack })
+    vim.api.nvim_set_hl(0, "Special",                  { bg = "none", fg = offGray })
+    vim.api.nvim_set_hl(0, "Normal",                   { fg = primaryFg, bg = "none"})
+    vim.api.nvim_set_hl(0, "NormalFloat",              { bg = primaryBlack })
+    vim.api.nvim_set_hl(0, "LineNr",                   { fg = offBrown , bg = "none"})
+    vim.api.nvim_set_hl(0, "Visual",                   { bg = primaryFg, fg = primaryBlack })
+    vim.api.nvim_set_hl(0, "SignColumn",               { bg = "none", fg = gray })
+    vim.api.nvim_set_hl(0, "CursorLine",               { bg = secondaryBlack})
+    vim.api.nvim_set_hl(0, "CursorLineNr",             { bg = secondaryBlack, fg = primaryFg })
+    vim.api.nvim_set_hl(0, "StatusLineNC",             { bg = "none", fg = primaryFg})
+    vim.api.nvim_set_hl(0, "StatusLine",               { fg = primaryBlack, bg = primaryFg })
+    vim.api.nvim_set_hl(0, "Comment",                  { fg = offBrown })
+    vim.api.nvim_set_hl(0, "String",                   { fg = lightBrown })
+    vim.api.nvim_set_hl(0, "Number",                   { fg = pink })
+    vim.api.nvim_set_hl(0, "Float",                    { fg = pink })
+    vim.api.nvim_set_hl(0, "Boolean",                  { fg = offGray })
+    vim.api.nvim_set_hl(0, "Type",                     { fg = primaryFg })
+    vim.api.nvim_set_hl(0, "Include",                  { fg = primaryFg })
+    vim.api.nvim_set_hl(0, "Statement",                { fg = primaryGreen })
+    vim.api.nvim_set_hl(0, "Define",                   { fg = primaryBrown })
+    vim.api.nvim_set_hl(0, "Structure",                { fg = primaryMagenta })
+    vim.api.nvim_set_hl(0, "Operator",                 { fg = primaryYellow })
+    vim.api.nvim_set_hl(0, "Constant",                 { fg = primaryYellow })
+    vim.api.nvim_set_hl(0, "Directory",                { fg = primaryGreen })
+    vim.api.nvim_set_hl(0, "EndOfBuffer",              { })
+    vim.api.nvim_set_hl(0, "ModeMsg",                  { bg = primaryRed , fg = primaryFg })
+    vim.api.nvim_set_hl(0, "MatchParen",               { bg = primaryOrange , fg = primaryBlack })
+    vim.api.nvim_set_hl(0, "MoreMsg",                  { fg = primaryRed  })
+    vim.api.nvim_set_hl(0, "SpecialKey",               { fg = primaryRed  })
+    vim.api.nvim_set_hl(0, "Question",                 { fg = primaryRed  })
+    vim.api.nvim_set_hl(0, "PreProc",                  { fg = primaryRed  })
+    vim.api.nvim_set_hl(0, "Pmenu",                    { fg = primaryRed , bg = secondaryBlack })
+    vim.api.nvim_set_hl(0, "PmenuSel",                 { fg = primaryRed , bg = primaryBlack })
+    vim.api.nvim_set_hl(0, "PmenuSbar",                { bg = primaryRed  })
+    vim.api.nvim_set_hl(0, "PmenuThumb",               { bg = secondaryBlack })
+    vim.api.nvim_set_hl(0, "Search",                   { bg = primaryFg , fg = primaryBlack })
+    vim.api.nvim_set_hl(0, "Folded",                   { bg = offGray, fg = primaryBlack})
+    vim.api.nvim_set_hl(0, "FoldColumn",               { bg = primaryFg, fg = primaryBlack})
+    vim.api.nvim_set_hl(0, "Todo",                     { bg = primaryFg, fg = primaryBlack})
+    vim.api.nvim_set_hl(0, "DiagnosticUnderlineInfo",  { })
+    vim.api.nvim_set_hl(0, "DiagnosticUnderlineHint",  { })
+    vim.api.nvim_set_hl(0, "DiagnosticUnderlineError", { })
+    vim.api.nvim_set_hl(0, "DiagnosticUnderlineWarn",  { })
+    vim.api.nvim_set_hl(0, "DiagnosticUnderlineOk",    { })
+end
 
 function ColorMyPencils(color)
-    vim.api.nvim_set_hl(0, "Identifier",               { fg = primaryFg })
+    local primaryWhite    = "#fefefe"
+    local primaryBlack    = "#17160B"
+    local secondaryBlack  = "#212012"
+    local primaryGreen    = "#a6d62d"
+    local secondaryGreen  = "#98b54e"
+    local primaryFg       = "#e2e2e2"
+    local secondayFg      = "#afccbd"
+    local primaryYellow   = "#fad220"
+    local secondaryYellow = "#8afffd"
+    local primaryBlue     = "#2e62b3"
+    local lightBlue       = "#84B2FF"
+    local primaryMagenta  = "#EE502B"
+    local gray            = "#CEC5B9"
+    local offGray         = "#817A60"
+    local offBrown        = "#a38c68"
+    local offBlue         = "#92a3b0"
+    vim.api.nvim_set_hl(0, "Identifier",               { fg = secondaryGreen })
+    vim.api.nvim_set_hl(0, "Function",                 { fg = primaryFg })
     vim.api.nvim_set_hl(0, "NonText",                  { fg = primaryFg })
+    vim.api.nvim_set_hl(0, "VertSplit",                { fg = offGray })
     vim.api.nvim_set_hl(0, "Special",                  { bg = "none" })
     vim.api.nvim_set_hl(0, "Normal",                   { fg = primaryFg, bg = "none"})
     vim.api.nvim_set_hl(0, "NormalFloat",              { bg = primaryBlack })
-    vim.api.nvim_set_hl(0, "LineNr",                   { fg = primaryFg, bg = "none"})
+    vim.api.nvim_set_hl(0, "LineNr",                   { fg = offGray , bg = "none"})
     vim.api.nvim_set_hl(0, "Visual",                   { bg = primaryFg, fg = primaryBlack })
     vim.api.nvim_set_hl(0, "SignColumn",               { bg = "none", fg = gray })
     vim.api.nvim_set_hl(0, "CursorLine",               { bg = secondaryBlack})
@@ -27,14 +100,14 @@ function ColorMyPencils(color)
     vim.api.nvim_set_hl(0, "String",                   { fg = primaryGreen })
     vim.api.nvim_set_hl(0, "Number",                   { fg = primaryGreen })
     vim.api.nvim_set_hl(0, "Float",                    { fg = primaryGreen })
-    vim.api.nvim_set_hl(0, "Boolean",                  { fg = primaryBlue })
+    vim.api.nvim_set_hl(0, "Boolean",                  { fg = primaryYellow })
     vim.api.nvim_set_hl(0, "Type",                     { fg = primaryFg })
     vim.api.nvim_set_hl(0, "Include",                  { fg = primaryWhite  })
     vim.api.nvim_set_hl(0, "Statement",                { fg = primaryMagenta })
-    vim.api.nvim_set_hl(0, "Define",                   { fg = primaryBlue })
+    vim.api.nvim_set_hl(0, "Define",                   { fg = offBrown })
     vim.api.nvim_set_hl(0, "Structure",                { fg = primaryGreen })
-    vim.api.nvim_set_hl(0, "Operator",                 { fg = primaryWhite })
-    vim.api.nvim_set_hl(0, "Constant",                 { bg = "none" })
+    vim.api.nvim_set_hl(0, "Operator",                 { fg = lightBlue })
+    vim.api.nvim_set_hl(0, "Constant",                 { fg = primaryYellow })
     vim.api.nvim_set_hl(0, "Directory",                { fg = primaryGreen })
     vim.api.nvim_set_hl(0, "EndOfBuffer",              { })
     vim.api.nvim_set_hl(0, "ModeMsg",                  { bg = primaryMagenta, fg = primaryWhite })
@@ -57,5 +130,5 @@ function ColorMyPencils(color)
     vim.api.nvim_set_hl(0, "DiagnosticUnderlineWarn",  { })
     vim.api.nvim_set_hl(0, "DiagnosticUnderlineOk",    { })
 end
-
+-- Pico8Colors()
 ColorMyPencils()
