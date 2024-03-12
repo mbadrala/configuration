@@ -11,7 +11,7 @@ local on_attach
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-    ensure_installed = { "lua_ls", "gopls", "clangd", "tsserver", "pyright", "omnisharp", "rust_analyzer", "hls" },
+    ensure_installed = { "lua_ls", "gopls", "clangd", "tsserver", "pyright", "omnisharp", "rust_analyzer" },
     handlers = {
         lsp_zero.default_setup,
         omnisharp = function ()
@@ -53,8 +53,9 @@ cmp.setup({
     })
 })
 
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-    vim.lsp.diagnostic.on_publish_diagnostics, {
-        virtual_text = false
-    }
-)
+-- vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+--     vim.lsp.diagnostic.on_publish_diagnostics, {
+--         virtual_text = false
+-- 
+--     }
+-- )

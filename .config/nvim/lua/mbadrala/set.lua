@@ -22,8 +22,15 @@ vim.opt.incsearch = true
 
 vim.opt.cul = true
 
-vim.opt.scrolloff = 10
+vim.opt.scrolloff = 6
 vim.opt.updatetime = 50
 
 vim.opt.clipboard = 'unnamedplus'
 
+vim.api.nvim_create_autocmd({ "FileType" }, {
+    pattern = { "javascript", "typescript", "javascriptreact", "typescriptreact" },
+    callback = function()
+        vim.bo.shiftwidth = 2
+        vim.bo.tabstop = 2
+    end,
+})
