@@ -11,7 +11,7 @@ local on_attach
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-    ensure_installed = { "lua_ls", "gopls", "clangd", "tsserver", "pyright", "omnisharp", "rust_analyzer" },
+    ensure_installed = { "lua_ls", "gopls", "clangd", "tsserver", "pyright", "omnisharp" },
     handlers = {
         lsp_zero.default_setup,
         omnisharp = function ()
