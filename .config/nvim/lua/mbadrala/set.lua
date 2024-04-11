@@ -28,7 +28,7 @@ vim.opt.updatetime = 50
 vim.opt.clipboard = 'unnamedplus'
 
 vim.api.nvim_create_autocmd({ "FileType" }, {
-    pattern = { "javascript", "typescript", "javascriptreact", "typescriptreact" },
+    pattern = { "astro", "javascript", "typescript", "javascriptreact", "typescriptreact" },
     callback = function()
         vim.bo.shiftwidth = 2
         vim.bo.tabstop = 2
