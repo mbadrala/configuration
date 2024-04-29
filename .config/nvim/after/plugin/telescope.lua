@@ -1,7 +1,9 @@
 require('telescope').setup{
     defaults = { 
         file_ignore_patterns = { 
-            "%.meta" 
+            "%.meta",
+            "%.prefab",
+            "%.dll"
         }
     }
 }

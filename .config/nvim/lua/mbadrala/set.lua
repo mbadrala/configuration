@@ -35,3 +35,5 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     end,
 })
 
+vim.api.nvim_set_keymap('n', '<leader>b', ':cclose<CR>', { noremap = true, silent = true })
+

@@ -15,7 +15,7 @@ function ColorMyPencils(color)
     local offGray         = "#817A60"
     local offBrown        = "#a38c68"
     local offBlue         = "#92a3b0"
-    vim.api.nvim_set_hl(0, "Identifier",               { fg = secondaryGreen })
+    vim.api.nvim_set_hl(0, "Identifier",               { fg = primaryFg })
     vim.api.nvim_set_hl(0, "Function",                 { fg = primaryFg })
     vim.api.nvim_set_hl(0, "NonText",                  { fg = primaryFg })
     vim.api.nvim_set_hl(0, "VertSplit",                { fg = offGray })
@@ -63,7 +63,5 @@ function ColorMyPencils(color)
     vim.api.nvim_set_hl(0, "DiagnosticUnderlineWarn",  { })
     vim.api.nvim_set_hl(0, "DiagnosticUnderlineOk",    { })
 end
--- vim.cmd('colorscheme github_light_default')
--- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
--- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+
 ColorMyPencils()

@@ -12,7 +12,7 @@ local on_attach
 require('mason').setup({})
 local lspconfig = require('lspconfig')
 require('mason-lspconfig').setup({
-    ensure_installed = { "lua_ls", "gopls", "clangd", "tsserver", "pyright", "omnisharp" },
+    ensure_installed = { "lua_ls", "gopls", "clangd", "tsserver", "pyright", "omnisharp", "rust_analyzer" },
     handlers = {
         lsp_zero.default_setup,
         omnisharp = function ()
@@ -67,24 +67,11 @@ cmp.setup({
     })
 })
 
- -- vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
- --     vim.lsp.diagnostic.on_publish_diagnostics, {
- --         virtual_text = false
- -- 
- --     }
- -- 
- -- )
-
 vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = "*.go",
   callback = function()
     local params = vim.lsp.util.make_range_params()
     params.context = {only = {"source.organizeImports"}}
-    -- buf_request_sync defaults to a 1000ms timeout. Depending on your
-    -- machine and codebase, you may want longer. Add an additional
-    -- argument after params if you find that you have to write the file
-    -- twice for changes to be saved.
-    -- E.g., vim.lsp.buf_request_sync(0, "textDocument/codeAction", params, 3000)
     local result = vim.lsp.buf_request_sync(0, "textDocument/codeAction", params)
     for cid, res in pairs(result or {}) do
       for _, r in pairs(res.result or {}) do
