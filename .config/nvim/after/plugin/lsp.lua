@@ -7,12 +7,22 @@ lsp_zero.on_attach(function(client, bufnr)
     lsp_zero.default_keymaps({buffer = bufnr})
 end)
 
-local on_attach
+local on_attach = function(client, bufnr)
+    
+end
 
 require('mason').setup({})
 local lspconfig = require('lspconfig')
 require('mason-lspconfig').setup({
-    ensure_installed = { "lua_ls", "gopls", "clangd", "tsserver", "pyright", "omnisharp", "rust_analyzer" },
+    ensure_installed = {
+        "lua_ls",
+        "gopls",
+        "clangd",
+        "tsserver",
+        "pyright",
+        "omnisharp@v1.39.8", 
+        "rust_analyzer" 
+    },
     handlers = {
         lsp_zero.default_setup,
         omnisharp = function ()
@@ -28,6 +38,7 @@ require('mason-lspconfig').setup({
                 organize_imports_on_format = true,
                 enable_import_completion = false,
                 sdk_include_prereleases = true,
+                on_attach = on_attach,
             })
         end,
         gopls = function ()
