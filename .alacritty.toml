@@ -1,34 +1,3 @@
-[colors.primary]
-background = '#fefefe'
-foreground = '#010101'
-
-[colors.cursor]
-text = '#181818'
-cursor = '#181818'
-
-# Normal colors
-[colors.normal]
-black   = '#181818'
-red     = '#ab4642'
-green   = '#7b8f46'
-yellow  = '#f7ca88'
-blue    = '#145f87'
-magenta = '#ba8baf'
-cyan    = '#4f8c84'
-white   = '#d8d8d8'
-
-# Bright colors
-[colors.bright]
-black   = '#585858'
-red     = '#ab4642'
-green   = '#a1b56c'
-yellow  = '#f7ca88'
-blue    = '#145f87'
-magenta = '#ba8baf'
-cyan    = '#4f8c84'
-white   = '#f8f8f8'
-
-
 [env]
 TERM = "xterm-256color"
 
@@ -52,8 +21,8 @@ x = 8
 y = 8
 
 [font]
-size = 15
-#normal = {family="JetBrains Mono", style="Regular"}
+size = 14
+normal = {family="CaskaydiaCove Nerd Font", style="Regular"}
 
 [keyboard]
 bindings = [

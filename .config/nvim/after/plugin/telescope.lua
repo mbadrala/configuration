@@ -20,3 +20,4 @@ vim.keymap.set('n', '<leader>pl', builtin.live_grep, {})
 
 vim.keymap.set('n', '<leader>pgs', builtin.git_status, {})
 vim.keymap.set('n', '<leader>pgc', builtin.git_commits, {})
+vim.keymap.set('n', '<leader>gr', builtin.lsp_references, {})

@@ -4,11 +4,32 @@ lsp_zero.on_attach(function(client, bufnr)
     -- see :help lsp-zero-keybindings
     -- to learn the available actions
     -- client.server_capabilities.semanticTokensProvider = nil
-    lsp_zero.default_keymaps({buffer = bufnr})
+    lsp_zero.default_keymaps({ buffer = bufnr })
+    local opts = { buffer = bufnr }
+    vim.keymap.set({ 'n', 'x' }, 'gq', function()
+        vim.lsp.buf.format({ async = false, timeout_ms = 10000 })
+    end, opts)
+    vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, {})
 end)
+lsp_zero.set_sign_icons({
+    error = '✘',
+    warn = '▲',
+    hint = '⚑',
+    info = '»'
+})
 
+vim.api.nvim_set_keymap('n', '<leader>do', '<cmd>lua vim.diagnostic.open_float()<CR>', { noremap = true, silent = true })
+vim.diagnostic.config({
+    virtual_text = {
+        -- source = "always",  -- Or "if_many"
+        prefix = '●', -- Could be '■', '▎', 'x'
+    },
+    severity_sort = true,
+    float = {
+        source = "always", -- Or "if_many"
+    },
+})
 local on_attach = function(client, bufnr)
-    
 end
 
 require('mason').setup({})
@@ -20,12 +41,12 @@ require('mason-lspconfig').setup({
         "clangd",
         "tsserver",
         "pyright",
-        "omnisharp@v1.39.8", 
-        "rust_analyzer" 
+        "omnisharp@v1.39.8",
+        "rust_analyzer"
     },
     handlers = {
         lsp_zero.default_setup,
-        omnisharp = function ()
+        omnisharp = function()
             lspconfig.omnisharp.setup({
                 handlers = {
                     ["textDocument/definition"] = require('omnisharp_extended').handler,
@@ -41,7 +62,7 @@ require('mason-lspconfig').setup({
                 on_attach = on_attach,
             })
         end,
-        gopls = function ()
+        gopls = function()
             lspconfig.gopls.setup({
                 settings = {
                     gopls = {
@@ -63,7 +84,7 @@ local cmp_action = lsp_zero.cmp_action()
 cmp.setup({
     mapping = cmp.mapping.preset.insert({
         -- `Enter` key to confirm completion
-        ['<CR>'] = cmp.mapping.confirm({select = false}),
+        ['<CR>'] = cmp.mapping.confirm({ select = false }),
 
         -- Ctrl+Space to trigger completion menu
         ['<C-Space>'] = cmp.mapping.complete(),
@@ -79,19 +100,19 @@ cmp.setup({
 })
 
 vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = "*.go",
-  callback = function()
-    local params = vim.lsp.util.make_range_params()
-    params.context = {only = {"source.organizeImports"}}
-    local result = vim.lsp.buf_request_sync(0, "textDocument/codeAction", params)
-    for cid, res in pairs(result or {}) do
-      for _, r in pairs(res.result or {}) do
-        if r.edit then
-          local enc = (vim.lsp.get_client_by_id(cid) or {}).offset_encoding or "utf-16"
-          vim.lsp.util.apply_workspace_edit(r.edit, enc)
+    pattern = "*.go",
+    callback = function()
+        local params = vim.lsp.util.make_range_params()
+        params.context = { only = { "source.organizeImports" } }
+        local result = vim.lsp.buf_request_sync(0, "textDocument/codeAction", params)
+        for cid, res in pairs(result or {}) do
+            for _, r in pairs(res.result or {}) do
+                if r.edit then
+                    local enc = (vim.lsp.get_client_by_id(cid) or {}).offset_encoding or "utf-16"
+                    vim.lsp.util.apply_workspace_edit(r.edit, enc)
+                end
+            end
         end
-      end
+        vim.lsp.buf.format({ async = false })
     end
-    vim.lsp.buf.format({async = false})
-  end
 })
