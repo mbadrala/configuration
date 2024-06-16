@@ -1,5 +1,5 @@
 autoload -U colors && colors
-PS1="%{$fg[cyan]%}%~ %{$fg[green]%}λ %{$reset_color%}% "
+export PS1="%F{080}%~ %F{007}λ %{$reset_color%}% "
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
@@ -18,8 +18,6 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
-
-[ -f "/Users/mbadrala/.ghcup/env" ] && source "/Users/mbadrala/.ghcup/env" # ghcup-env
 
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
