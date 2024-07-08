@@ -34,5 +34,62 @@ return require('packer').startup(function(use)
         }
     }
     use { 'lewis6991/gitsigns.nvim' }
-    use { "scottmckendry/cyberdream.nvim" }
+    use "craftzdog/solarized-osaka.nvim"
+    use "slugbyte/lackluster.nvim"
+    use {
+        'nvimdev/dashboard-nvim',
+        event = 'VimEnter',
+        config = function()
+            require('dashboard').setup {
+                theme = 'doom',
+                config = {
+                    header = {
+                        '                                                  ',
+                        '                                                  ',
+                        '                                                  ',
+                        '                                                  ',
+                        '                                                  ',
+                        '                                                  ',
+                        '                                                  ',
+                        '                                                  ',
+                        '                                                  ',
+                        '                                                  ',
+                        '                                                  ',
+                        '                                                  ',
+                        '                                                  ',
+                        '                                                  ',
+                        '                                                  ',
+                        '                                                  ',
+                        '                                                  ',
+                        '                                                  ',
+                        '                                                  ',
+                        '                                                  ',
+                    },
+                    center = {
+                        {
+                            icon = '  ',
+                            -- icon_hl = 'Title',
+                            desc = 'Find Git File           ',
+                            -- desc_hl = 'String',
+                            key = 'p',
+                            keymap = 'Ctrl +',
+                            key_hl = 'Number',
+                            key_format = ' %s', -- remove default surrounding `[]`
+                            action = 'lua print(2)'
+                        },
+                        {
+                            icon = '  ',
+                            desc = 'Find files',
+                            key = 'f',
+                            keymap = 'Leader + p +',
+                            key_format = ' %s', -- remove default surrounding `[]`
+                            action = 'lua print(3)'
+                        },
+                    },
+                    footer = {} --your footer
+                }
+            }
+        end,
+        requires = { 'nvim-tree/nvim-web-devicons' }
+    }
 end)

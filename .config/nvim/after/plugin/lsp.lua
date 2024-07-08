@@ -41,8 +41,7 @@ require('mason-lspconfig').setup({
         "clangd",
         "tsserver",
         "pyright",
-        "omnisharp@v1.39.8",
-        "rust_analyzer"
+        "omnisharp@v1.39.8"
     },
     handlers = {
         lsp_zero.default_setup,
