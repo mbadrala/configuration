@@ -1,31 +1,31 @@
-vim.opt.guicursor = ""
+vim.o.guicursor = ""
 
-vim.opt.number = true
-vim.opt.relativenumber = true
+vim.o.number = true
+vim.o.relativenumber = true
 
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
-vim.opt.smartindent = true
+vim.o.tabstop = 4
+vim.o.softtabstop = 4
+vim.o.shiftwidth = 4
+vim.o.expandtab = true
+vim.o.smartindent = true
 
-vim.opt.swapfile = false
-vim.opt.backup = false
-vim.opt.undodir = os.getenv("HOME" .. "/.vim/undodir")
-vim.opt.undofile = true
+vim.o.swapfile = false
+vim.o.backup = false
+vim.o.undodir = os.getenv("HOME" .. "/.vim/undodir")
+vim.o.undofile = true
 
-vim.opt.wrap = false 
-vim.opt.linebreak = true 
+vim.o.wrap = false 
+vim.o.linebreak = true 
 
-vim.opt.hlsearch = true
-vim.opt.incsearch = true
+vim.o.hlsearch = true
+vim.o.incsearch = true
 
-vim.opt.cul = true
+vim.o.cul = true
 
-vim.opt.scrolloff = 6
-vim.opt.updatetime = 50
+vim.o.scrolloff = 6
+vim.o.updatetime = 50
 
-vim.opt.clipboard = 'unnamedplus'
+vim.o.clipboard = 'unnamedplus'
 
 vim.api.nvim_create_autocmd({ "FileType" }, {
     pattern = { "astro", "javascript", "typescript", "javascriptreact", "typescriptreact" },
