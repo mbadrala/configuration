@@ -14,8 +14,8 @@ vim.o.backup = false
 vim.o.undodir = os.getenv("HOME" .. "/.vim/undodir")
 vim.o.undofile = true
 
-vim.o.wrap = false 
-vim.o.linebreak = true 
+vim.o.wrap = false
+vim.o.linebreak = true
 
 vim.o.hlsearch = true
 vim.o.incsearch = true
@@ -37,3 +37,6 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 
 vim.api.nvim_set_keymap('n', '<leader>b', ':cclose<CR>', { noremap = true, silent = true })
 
+vim.opt.title = true
+vim.opt.titlestring = [[%{fnamemodify(getcwd(), ':t')} - nvim]]
+-- echo fnamemodify(getcwd(), ':t')
