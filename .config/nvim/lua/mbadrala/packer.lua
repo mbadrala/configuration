@@ -1,4 +1,3 @@
---4 Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
@@ -14,10 +13,10 @@ return require('packer').startup(function(use)
             ts_update()
         end,
     }
-    use('mbbill/undotree')
-    use('tpope/vim-fugitive')
-    use('norcalli/nvim-colorizer.lua')
-    use "Hoffs/omnisharp-extended-lsp.nvim"
+    use 'mbbill/undotree'
+    use 'tpope/vim-fugitive'
+    use 'norcalli/nvim-colorizer.lua'
+    use 'Hoffs/omnisharp-extended-lsp.nvim'
     use {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v3.x',
@@ -33,5 +32,6 @@ return require('packer').startup(function(use)
             { 'L3MON4D3/LuaSnip' },
         }
     }
-    use { 'lewis6991/gitsigns.nvim' }
+    use 'lewis6991/gitsigns.nvim'
+    use 'mbadrala/emrys'
 end)

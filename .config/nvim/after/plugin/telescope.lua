@@ -1,15 +1,17 @@
-require('telescope').setup{
-    defaults = { 
-        file_ignore_patterns = { 
+require('telescope').setup {
+    defaults = {
+        file_ignore_patterns = {
             "%.meta",
             "%.prefab",
             "%.dll",
             "%.mat"
-        }
+        },
+        path_display = { "truncate" }
     }
 }
 
 local builtin = require('telescope.builtin')
+
 vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
 vim.keymap.set('n', '<C-p>', builtin.git_files, {})
 vim.keymap.set('n', '<leader>ps', function()
@@ -22,3 +24,5 @@ vim.keymap.set('n', '<leader>pgs', builtin.git_status, {})
 vim.keymap.set('n', '<leader>pgc', builtin.git_commits, {})
 vim.keymap.set('n', '<leader>gr', builtin.lsp_references, {})
 vim.keymap.set('n', '<leader>gf', builtin.lsp_document_symbols, {})
+
+vim.cmd "autocmd User TelescopePreviewerLoaded setlocal number"
