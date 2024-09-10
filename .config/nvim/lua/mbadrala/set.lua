@@ -39,3 +39,6 @@ vim.api.nvim_set_keymap('n', '<leader>b', ':cclose<CR>', { noremap = true, silen
 
 vim.opt.title = true
 vim.opt.titlestring = [[%{fnamemodify(getcwd(), ':t')} - nvim]]
+
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_ruby_provider = 0

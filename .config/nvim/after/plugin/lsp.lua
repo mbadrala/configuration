@@ -1,9 +1,6 @@
 local lsp_zero = require('lsp-zero')
 
 lsp_zero.on_attach(function(client, bufnr)
-    -- see :help lsp-zero-keybindings
-    -- to learn the available actions
-    -- client.server_capabilities.semanticTokensProvider = nil
     lsp_zero.default_keymaps({ buffer = bufnr })
     local opts = { buffer = bufnr }
     vim.keymap.set({ 'n', 'x' }, 'gq', function()
@@ -11,6 +8,7 @@ lsp_zero.on_attach(function(client, bufnr)
     end, opts)
     vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, {})
 end)
+
 lsp_zero.set_sign_icons({
     error = '✘',
     warn = '▲',
@@ -29,8 +27,6 @@ vim.diagnostic.config({
         source = "always", -- Or "if_many"
     },
 })
-local on_attach = function(client, bufnr)
-end
 
 require('mason').setup({})
 local lspconfig = require('lspconfig')
@@ -72,6 +68,17 @@ require('mason-lspconfig').setup({
                         gofumpt = true,
                     },
                 },
+            })
+        end,
+        lua_ls = function()
+            lspconfig.lua_ls.setup({
+                settings = {
+                    Lua = {
+                        diagnostics = {
+                            globals = { 'vim' } -- Recognize 'vim' as a global variable
+                        }
+                    }
+                }
             })
         end
     },

@@ -1,2 +1,4 @@
-require('emrys').setup()
-
+require('kaska').setup(
+    {
+        transparent = false
+    })
