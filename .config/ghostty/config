@@ -2,7 +2,7 @@ background = 0d0d0d
 foreground= ffffff
 
 macos-titlebar-style = transparent
-# window-decoration = false
 macos-icon = custom-style
-macos-icon-frame = beige
-macos-icon-ghost-color = f54242
+macos-icon-frame = plastic
+macos-icon-ghost-color = 212121
+macos-icon-screen-color = 212121
