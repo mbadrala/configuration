@@ -1,5 +1,8 @@
-background = 0d0d0d
-foreground= ffffff
+background = fffcf1
+foreground= 020202
+
+font-family = "JetBrainsMono Nerd Font"
+font-size = 15
 
 macos-titlebar-style = transparent
 macos-icon = custom-style
