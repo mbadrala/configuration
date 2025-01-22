@@ -3,9 +3,11 @@ local lsp_zero = require('lsp-zero')
 lsp_zero.on_attach(function(client, bufnr)
     lsp_zero.default_keymaps({ buffer = bufnr })
     local opts = { buffer = bufnr }
+    -- Format
     vim.keymap.set({ 'n', 'x' }, 'gq', function()
         vim.lsp.buf.format({ async = false, timeout_ms = 10000 })
     end, opts)
+    -- Rename
     vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, {})
 end)
 
@@ -35,7 +37,7 @@ require('mason-lspconfig').setup({
         "lua_ls",
         "gopls",
         "clangd",
-        "tsserver",
+        "ts_ls",
         "pyright",
         "omnisharp@v1.39.8"
     },

@@ -1,4 +1,4 @@
-require('kaska').setup(
+require('kizmet').setup(
     {
-        transparent = false
+        transparent = true
     })
