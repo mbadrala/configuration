@@ -43,6 +43,7 @@ require('mason-lspconfig').setup({
     },
     handlers = {
         lsp_zero.default_setup,
+        rust_analyzer = function() end,
         omnisharp = function()
             lspconfig.omnisharp.setup({
                 handlers = {
@@ -124,3 +125,4 @@ vim.api.nvim_create_autocmd("BufWritePre", {
         vim.lsp.buf.format({ async = false })
     end
 })
+

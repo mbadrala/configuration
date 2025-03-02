@@ -22,6 +22,7 @@ return require('packer').startup(function(use)
     -- Git integration
     use 'tpope/vim-fugitive'
     use 'lewis6991/gitsigns.nvim'
+    use 'kdheepak/lazygit.nvim'
 
     -- Utility plugins
     use 'mbbill/undotree'
@@ -43,12 +44,21 @@ return require('packer').startup(function(use)
         }
     }
 
-    -- Colorscheme
-    use 'aliqyan-21/darkvoid.nvim'
+    -- Debugger
+    use 'mfussenegger/nvim-dap'
+    use 'nvim-neotest/nvim-nio'
+    use 'rcarriga/nvim-dap-ui'
+    use 'mrcjkb/rustaceanvim'
 
-    -- Custom plugins
+    -- Custom colors
     use '~/a/kaska'
     use '~/a/kizmet'
+
+    use 'rose-pine/neovim'
+
+    use "craftzdog/solarized-osaka.nvim"
+    -- Tmux integration
+    -- use ''
 
     -- Avante plugin for AI integration
     -- use {

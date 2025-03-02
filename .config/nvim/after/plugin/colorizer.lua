@@ -1,2 +1,2 @@
-vim.o.termguicolors = true
+-- vim.o.termguicolors = true
 -- require'colorizer'.setup()

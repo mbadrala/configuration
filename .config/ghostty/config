@@ -1,30 +1,12 @@
-palette = 0=#000000
-palette = 1=#ff3333
-palette = 2=#86b300
-palette = 3=#f29718
-palette = 4=#41a6d9
-palette = 5=#f07178
-palette = 6=#4dbf99
-palette = 7=#ffffff
-palette = 8=#323232
-palette = 9=#ff6565
-palette = 10=#b8e532
-palette = 11=#ffc94a
-palette = 12=#73d8ff
-palette = 13=#ffa3aa
-palette = 14=#7ff1cb
-palette = 15=#ffffff
-background = fffcf1
-foreground= 020202
-cursor-color = #ff6a00
-selection-background = #f0eee4
-selection-foreground = #5c6773
+# background = #121212
 
-font-family = "JetBrainsMono Nerd Font"
-font-size = 14.5
+theme = Seti
+
+font-family = "Berkeley Mono"
+font-size = 14
 
 macos-titlebar-style = transparent
-macos-icon = custom-style
-macos-icon-frame = plastic
-macos-icon-ghost-color = 212121
-macos-icon-screen-color = 212121
+macos-icon = holographic
+# macos-icon-frame = plastic
+# macos-icon-ghost-color = 212121
+# macos-icon-screen-color = 212121
