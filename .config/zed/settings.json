@@ -1,0 +1,62 @@
+// Zed settings
+{
+  "assistant": {
+    "default_model": {
+      "provider": "zed.dev",
+      "model": "claude-3-7-sonnet-latest"
+    },
+    "version": "2"
+  },
+  "project_panel": {
+    "dock": "right"
+  },
+  "theme": "Vitesse Refined Black",
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "format_on_save": "off",
+  "vim_mode": true,
+  "ui_font_size": 13,
+  "buffer_font_size": 14,
+  "ui_font_family": "Input Mono",
+  "buffer_font_family": "Berkeley Mono",
+  "buffer_line_height": {
+    "custom": 1.4
+  },
+  "gutter": {
+    "folds": false
+  },
+  "relative_line_numbers": true,
+  "file_scan_exclusions": [
+    "*.meta",
+    "*.cs.meta",
+    "**/.git",
+    "**/.svn",
+    "**/.hg",
+    "*.asset",
+    "**/CVS",
+    "**/.DS_Store",
+    "**/Thumbs.db",
+    "**/.classpath",
+    "**/.settings"
+  ],
+  "soft_wrap": "editor_width",
+  "languages": {
+    "Python": {
+      "language_servers": ["ruff"],
+      "format_on_save": "off",
+      "formatter": [
+        {
+          "language_server": {
+            "name": "ruff"
+          }
+        }
+      ]
+    }
+  },
+  "show_whitespaces": "all",
+  "experimental.theme_overrides": {
+    "editor.invisible": "#222222"
+  }
+}
