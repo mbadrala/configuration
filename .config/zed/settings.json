@@ -10,7 +10,7 @@
   "project_panel": {
     "dock": "right"
   },
-  "theme": "Vitesse Refined Black",
+  "theme": "Zed Legacy: Solarized Light",
   "telemetry": {
     "diagnostics": false,
     "metrics": false
@@ -22,7 +22,7 @@
   "ui_font_family": "Input Mono",
   "buffer_font_family": "Berkeley Mono",
   "buffer_line_height": {
-    "custom": 1.4
+    "custom": 1.5
   },
   "gutter": {
     "folds": false
@@ -41,7 +41,8 @@
     "**/.classpath",
     "**/.settings"
   ],
-  "soft_wrap": "editor_width",
+  "soft_wrap": "none",
+  "double_click_in_multibuffer": "open",
   "languages": {
     "Python": {
       "language_servers": ["ruff"],
@@ -57,6 +58,6 @@
   },
   "show_whitespaces": "all",
   "experimental.theme_overrides": {
-    "editor.invisible": "#222222"
+    "editor.invisible": "#cccccc"
   }
 }

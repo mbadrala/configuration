@@ -54,8 +54,6 @@ return require('packer').startup(function(use)
     use '~/a/kaska'
     use '~/a/kizmet'
 
-    use 'rose-pine/neovim'
-
     use "craftzdog/solarized-osaka.nvim"
     -- Tmux integration
     -- use ''

@@ -1,9 +1,12 @@
-# background = #121212
+# background = #111111
 
-theme = Seti
+theme = GruvboxLightHard
+# theme = flexoki-light
 
 font-family = "Berkeley Mono"
-font-size = 14
+font-size = 13
+
+# custom-shader = ghostty-shaders/glow-rgbsplit-twitchy.glsl
 
 macos-titlebar-style = transparent
 macos-icon = holographic
