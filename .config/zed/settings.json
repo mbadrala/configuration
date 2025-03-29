@@ -45,7 +45,7 @@
   "double_click_in_multibuffer": "open",
   "languages": {
     "Python": {
-      "language_servers": ["ruff"],
+      "language_servers": ["pylsp", "ruff"],
       "format_on_save": "off",
       "formatter": [
         {
