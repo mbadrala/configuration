@@ -38,8 +38,8 @@ require('mason-lspconfig').setup({
         "gopls",
         "clangd",
         "ts_ls",
-        "pyright",
-        "omnisharp@v1.39.8"
+        "ruff",
+        "omnisharp"
     },
     handlers = {
         lsp_zero.default_setup,

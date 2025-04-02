@@ -1,1 +1,1 @@
-vim.cmd("color kizmet")
+require('kaska').setup({ transparent = true })
