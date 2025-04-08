@@ -7,7 +7,16 @@ return require('packer').startup(function(use)
     -- Telescope for fuzzy finding
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.3',
-        requires = { { 'nvim-lua/plenary.nvim' } }
+        requires = {
+            {
+                'nvim-lua/plenary.nvim',
+            }
+        }
+    }
+
+    use {
+        'nvim-telescope/telescope-fzf-native.nvim',
+        run = 'make'
     }
 
     -- Treesitter for better syntax highlighting
@@ -54,7 +63,6 @@ return require('packer').startup(function(use)
     use '~/a/kaska'
     use '~/a/kizmet'
 
-    use "craftzdog/solarized-osaka.nvim"
     -- Tmux integration
     -- use ''
 
