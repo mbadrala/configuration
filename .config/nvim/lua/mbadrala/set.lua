@@ -14,7 +14,7 @@ vim.o.backup = false
 vim.o.undodir = os.getenv("HOME" .. "/.vim/undodir")
 vim.o.undofile = true
 
-vim.o.wrap = true
+vim.o.wrap = false
 vim.o.linebreak = true
 
 vim.o.hlsearch = true
@@ -42,3 +42,6 @@ vim.opt.titlestring = [[%{fnamemodify(getcwd(), ':t')} - nvim]]
 
 vim.g.loaded_perl_provider = 0
 vim.g.loaded_ruby_provider = 0
+
+vim.opt.list = true
+vim.opt.listchars = "tab:→ ,space:·,nbsp:␣,trail:·"
