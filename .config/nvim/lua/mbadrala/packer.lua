@@ -61,7 +61,7 @@ return require('packer').startup(function(use)
 
     -- Custom colors
     use '~/a/kaska'
-    use '~/a/kizmet'
+    use 'mbadrala/kizmet'
 
     -- Tmux integration
     -- use ''
