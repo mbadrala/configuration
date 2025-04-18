@@ -21,7 +21,6 @@ lsp_zero.set_sign_icons({
 vim.api.nvim_set_keymap('n', '<leader>do', '<cmd>lua vim.diagnostic.open_float()<CR>', { noremap = true, silent = true })
 vim.diagnostic.config({
     virtual_text = {
-        -- source = "always",  -- Or "if_many"
         prefix = '●', -- Could be '■', '▎', 'x'
     },
     severity_sort = true,
@@ -39,6 +38,7 @@ require('mason-lspconfig').setup({
         "clangd",
         "ts_ls",
         "ruff",
+        "pyright",
         "omnisharp"
     },
     handlers = {
@@ -50,14 +50,27 @@ require('mason-lspconfig').setup({
                     ["textDocument/definition"] = require('omnisharp_extended').handler,
                 },
                 cmd = { "omnisharp", '--languageserver', '--hostPID', tostring(vim.fn.getpid()) },
-                enable_editorconfig_support = true, -- setting from .editorconfig
+                enable_editorconfig_support = true,
                 enable_ms_build_load_projects_on_demand = false,
                 enable_roslyn_analyzers = true,
                 analyze_open_documents_only = true,
                 organize_imports_on_format = true,
                 enable_import_completion = false,
                 sdk_include_prereleases = true,
-                on_attach = on_attach,
+            })
+        end,
+        pyright = function()
+            lspconfig.pyright.setup({
+                settings = {
+                    pyright = {
+                        disableOrganizeImports = true,
+                    },
+                    python = {
+                        analysis = {
+                            ignore = { '*' },
+                        },
+                    },
+                }
             })
         end,
         gopls = function()
@@ -126,3 +139,16 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     end
 })
 
+vim.api.nvim_create_autocmd("LspAttach", {
+    group = vim.api.nvim_create_augroup('lsp_attach_disable_ruff_hover', { clear = true }),
+    callback = function(args)
+        local client = vim.lsp.get_client_by_id(args.data.client_id)
+        if client == nil then
+            return
+        end
+        if client.name == 'ruff' then
+            client.server_capabilities.hoverProvider = false
+        end
+    end,
+    desc = 'LSP: Disable hover capability from Ruff',
+})
