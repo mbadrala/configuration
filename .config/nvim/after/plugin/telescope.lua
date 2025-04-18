@@ -11,12 +11,17 @@ telescope.setup {
         path_display = { "truncate" },
         git_status = false
     },
+    pickers = {
+        git_files = {
+            case_mode = "ignore_case",
+        }
+    },
     extensions = {
         fzf = {
             fuzzy = true,
             override_generic_sorter = true,
             override_file_sorter = true,
-            case_mode = "smart_case",
+            case_mode = "ignore_case",
         }
     }
 }
