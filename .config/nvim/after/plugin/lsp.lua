@@ -50,6 +50,7 @@ require('mason-lspconfig').setup({
                     ["textDocument/definition"] = require('omnisharp_extended').handler,
                 },
                 cmd = { "omnisharp", '--languageserver', '--hostPID', tostring(vim.fn.getpid()) },
+                root_dir = lspconfig.util.root_pattern("*.csproj", "*.sln", "Assets"),
                 enable_editorconfig_support = true,
                 enable_ms_build_load_projects_on_demand = false,
                 enable_roslyn_analyzers = true,
