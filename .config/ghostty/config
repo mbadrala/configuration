@@ -1,15 +1,7 @@
-# background = #111111
-
-theme = GruvboxLightHard
-# theme = flexoki-light
-
+theme = rose-pine-dawn
+cursor-style-blink = true
 font-family = "Berkeley Mono"
-font-size = 13
+font-size = 14
 
-# custom-shader = ghostty-shaders/glow-rgbsplit-twitchy.glsl
-
-macos-titlebar-style = transparent
+macos-titlebar-style = tabs
 macos-icon = holographic
-# macos-icon-frame = plastic
-# macos-icon-ghost-color = 212121
-# macos-icon-screen-color = 212121
