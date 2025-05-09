@@ -43,5 +43,7 @@ vim.opt.titlestring = [[%{fnamemodify(getcwd(), ':t')} - nvim]]
 vim.g.loaded_perl_provider = 0
 vim.g.loaded_ruby_provider = 0
 
-vim.opt.list = true
-vim.opt.listchars = "tab:→ ,space:·,nbsp:␣,trail:·"
+-- vim.opt.list = true
+-- vim.opt.listchars = "tab:→ ,space:·,nbsp:␣,trail:·"
+
+vim.opt.foldenable = true

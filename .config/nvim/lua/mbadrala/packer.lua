@@ -61,74 +61,21 @@ return require('packer').startup(function(use)
 
     -- Custom colors
     use '~/a/kaska'
-    use 'mbadrala/kizmet'
+    use '~/a/kizmet'
 
-    -- Tmux integration
-    -- use ''
+    use "EdenEast/nightfox.nvim"
 
-    -- Avante plugin for AI integration
-    -- use {
-    --     'yetone/avante.nvim',
-    --     requires = {
-    --         { "MunifTanjim/nui.nvim" },
-    --         { "stevearc/dressing.nvim" },
-    --         { "nvim-tree/nvim-web-devicons" }
-    --     },
-    --     config = function()
-    --         require('avante').setup {
-    --             provider = "claude",
-    --             claude = {
-    --                 endpoint = "https://api.anthropic.com",
-    --                 model = "claude-3-5-sonnet-20240620",
-    --                 temperature = 0,
-    --                 max_tokens = 4096,
-    --             },
-    --             mappings = {
-    --                 ask = "<leader>aa",
-    --                 edit = "<leader>ae",
-    --                 refresh = "<leader>ar",
-    --                 diff = {
-    --                     ours = "co",
-    --                     theirs = "ct",
-    --                     none = "c0",
-    --                     both = "cb",
-    --                     next = "]x",
-    --                     prev = "[x",
-    --                 },
-    --                 jump = {
-    --                     next = "]]",
-    --                     prev = "[[",
-    --                 },
-    --                 submit = {
-    --                     normal = "<CR>",
-    --                     insert = "<C-s>",
-    --                 },
-    --                 toggle = {
-    --                     debug = "<leader>ad",
-    --                     hint = "<leader>ah",
-    --                 },
-    --             },
-    --             hints = { enabled = true },
-    --             windows = {
-    --                 wrap = true,
-    --                 width = 30,
-    --                 sidebar_header = {
-    --                     align = "center",
-    --                     rounded = true,
-    --                 },
-    --             },
-    --             highlights = {
-    --                 diff = {
-    --                     current = "DiffText",
-    --                     incoming = "DiffAdd",
-    --                 },
-    --             },
-    --             diff = {
-    --                 debug = false,
-    --                 autojump = true,
-    --                 list_opener = "copen",
-    --             },
-    --         }
-    --     end
-    -- }
+    use {
+        'yetone/avante.nvim',
+        branch = 'main',
+        run = 'make',
+        config = function()
+            require('avante').setup()
+        end,
+        requires = {
+            { 'stevearc/dressing.nvim' },
+            { 'MunifTanjim/nui.nvim' },
+            { 'MeanderingProgrammer/render-markdown.nvim' },
+        }
+    }
 end)
