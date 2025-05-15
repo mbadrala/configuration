@@ -53,6 +53,11 @@ return require('packer').startup(function(use)
         }
     }
 
+    use {
+        'jose-elias-alvarez/null-ls.nvim',
+        requires = { 'nvim-lua/plenary.nvim' },
+    }
+
     -- Debugger
     use 'mfussenegger/nvim-dap'
     use 'nvim-neotest/nvim-nio'

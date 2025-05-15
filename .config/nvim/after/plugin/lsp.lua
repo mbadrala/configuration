@@ -3,10 +3,11 @@ local lsp_zero = require('lsp-zero')
 lsp_zero.on_attach(function(client, bufnr)
     lsp_zero.default_keymaps({ buffer = bufnr })
     local opts = { buffer = bufnr }
-    -- Format
-    vim.keymap.set({ 'n', 'x' }, 'gq', function()
-        vim.lsp.buf.format({ async = false, timeout_ms = 10000 })
-    end, opts)
+    -- Disable ts_ls formatting
+    if client.name == "ts_ls" then
+        client.server_capabilities.documentFormattingProvider = false
+        client.server_capabilities.documentRangeFormattingProvider = false
+    end
     -- Rename
     vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, {})
 end)
@@ -92,7 +93,7 @@ require('mason-lspconfig').setup({
                 settings = {
                     Lua = {
                         diagnostics = {
-                            globals = { 'vim' } -- Recognize 'vim' as a global variable
+                            globals = { 'vim' }, -- Recognize 'vim' as a global variable
                         }
                     }
                 }
@@ -153,3 +154,26 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end,
     desc = 'LSP: Disable hover capability from Ruff',
 })
+
+local null_ls = require("null-ls")
+
+null_ls.setup({
+    sources = {
+        null_ls.builtins.formatting.prettier.with({
+            filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
+            command = "pnpm",
+            args = { "exec", "prettier", "--stdin-filepath", "$FILENAME" },
+        }),
+    },
+})
+
+-- Format
+vim.keymap.set({ "n", "x" }, "gq", function()
+    vim.lsp.buf.format({
+        async = false,
+        timeout_ms = 10000,
+        filter = function(client)
+            return client.name == "null-ls"
+        end,
+    })
+end, { desc = "Format code" })
